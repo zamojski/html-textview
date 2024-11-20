@@ -1,26 +1,33 @@
 apply plugin: 'com.android.library'
-apply plugin: 'bintray-release'
 
 android {
-    compileSdkVersion 29
+    namespace 'org.sufficientlysecure.htmltextview'
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 29
+        minSdkVersion 21
+        targetSdkVersion 34
+        compileSdk 34
         versionName '4.0'
     }
 }
 
-publish {
-    userOrg = 'sufficientlysecure'
-    groupId = 'org.sufficientlysecure'
-    artifactId = 'html-textview'
-    publishVersion = android.defaultConfig.versionName
-    website = 'https://github.com/SufficientlySecure/html-textview'
-    desc = 'HtmlTextView is an extended TextView component for Android, which can load HTML and converts it into Spannable for displaying it.'
-}
+//publish {
+//    userOrg = 'sufficientlysecure'
+//    groupId = 'org.sufficientlysecure'
+//    artifactId = 'html-textview'
+//    publishVersion = android.defaultConfig.versionName
+//    website = 'https://github.com/SufficientlySecure/html-textview'
+//    desc = 'HtmlTextView is an extended TextView component for Android, which can load HTML and converts it into Spannable for displaying it.'
+//}
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.1.0'
-
+    implementation 'androidx.annotation:annotation:1.9.1'
  }
+
+task cleanBuildPublishLocal(type: GradleBuild) {
+    tasks = ['clean', 'build', 'publishToMavenLocal']
+}
+
+task cleanBuildPublish(type: GradleBuild) {
+    tasks = ['clean', 'build', 'publish']
+}
