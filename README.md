@@ -1,4 +1,4 @@
-# Project stopped
+# The original project stopped
 
 This project has been stopped. 4.0 is the last release.
 
@@ -17,12 +17,16 @@ This library is kept tiny without external dependencies.
 Add this to your build.gradle:
 
 ```
-repositories {
-    jcenter()
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
 }
 
 dependencies {
-    compile 'org.sufficientlysecure:html-textview:4.0'
+    implementation 'com.github.zamojski:html-textview:5.0'
 }
 ```
 
@@ -156,6 +160,10 @@ We recognize the standard table tags:
 as well as the tags extended by HtmlTextView. However, support doesn’t currently extend to tags natively supported by Android (e.g. ``<b>``, ``<big>``, ``<h1>``) which means tables will not include the extra styling.
 
 ### Changelog
+
+#### 5.0
+* Upgrades to compile in Android Studio 2024.2 and target Android API 34.
+* Switch from jcenter to jitpack.io
 
 #### 4.0
 * [A tag click enhancements](https://github.com/SufficientlySecure/html-textview/pull/191)
