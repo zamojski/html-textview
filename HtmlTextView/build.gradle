@@ -10,34 +10,30 @@ android {
         compileSdk 34
         versionName '5.0'
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
 }
 
-//publish {
-//    userOrg = 'sufficientlysecure'
-//    groupId = 'org.sufficientlysecure'
-//    artifactId = 'html-textview'
-//    publishVersion = android.defaultConfig.versionName
-//    website = 'https://github.com/SufficientlySecure/html-textview'
-//    desc = 'HtmlTextView is an extended TextView component for Android, which can load HTML and converts it into Spannable for displaying it.'
-//}
-
-//// Because the components are created only during the afterEvaluate phase, you must
-//// configure your publications using the afterEvaluate() lifecycle method.
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            // Creates a Maven publication called "release".
-//            release(MavenPublication) {
-//                // Applies the component for the release build variant.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.findByName('release')
 //                from components.release
-//                // You can then customize attributes of the publication as shown below.
-//                groupId = 'org.sufficientlysecure'
-//                artifactId = 'html-textview'
-//                version = project.version
-//            }
-//        }
-//    }
-//}
+                groupId = 'org.sufficientlysecure'
+                artifactId = 'html-textview'
+                version = android.defaultConfig.versionName
+                //website = 'https://github.com/zamojski/html-textview'
+                //desc = 'HtmlTextView is an extended TextView component for Android, which can load HTML and converts it into Spannable for displaying it.'
+            }
+        }
+    }
+}
 
 dependencies {
     //TODO fix AndroidX implementation 'androidx.annotation:annotation:1.9.1'
