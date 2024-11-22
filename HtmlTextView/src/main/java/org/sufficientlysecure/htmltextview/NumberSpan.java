@@ -21,8 +21,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Parcel;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.NonNull;
+//TODO fix AndroidX import androidx.annotation.Nullable;
 
 import android.text.Layout;
 import android.text.Spanned;
@@ -55,7 +55,7 @@ public class NumberSpan extends BulletSpan {
         mNumber = src.readString();
     }
 
-    public void writeToParcel(@NonNull Parcel dest, int flags) {
+    public void writeToParcel(/*TODO fix AndroidX @NonNull*/ Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
         dest.writeInt(mNumberGapWidth);
         dest.writeString(mNumber);
@@ -66,9 +66,9 @@ public class NumberSpan extends BulletSpan {
     }
 
     @Override
-    public void drawLeadingMargin(@NonNull Canvas c, @NonNull Paint p, int x, int dir,
-                                  int top, int baseline, int bottom, @NonNull CharSequence text,
-                                  int start, int end, boolean first, @Nullable Layout l) {
+    public void drawLeadingMargin(/*TODO fix AndroidX @NonNull*/ Canvas c, /*TODO fix AndroidX @NonNull*/ Paint p, int x, int dir,
+                                  int top, int baseline, int bottom, /*TODO fix AndroidX @NonNull*/ CharSequence text,
+                                  int start, int end, boolean first, /*TODO fix AndroidX @Nullable*/ Layout l) {
         if (((Spanned) text).getSpanStart(this) == start) {
             Paint.Style style = p.getStyle();
 

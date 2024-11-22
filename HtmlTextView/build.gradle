@@ -40,7 +40,7 @@ android {
 //}
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.9.1'
+    //TODO fix AndroidX implementation 'androidx.annotation:annotation:1.9.1'
  }
 
 task cleanBuildPublishLocal(type: GradleBuild) {

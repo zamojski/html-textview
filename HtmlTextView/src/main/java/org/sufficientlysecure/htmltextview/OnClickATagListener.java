@@ -16,7 +16,7 @@ package org.sufficientlysecure.htmltextview;
 
 import android.view.View;
 
-import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.Nullable;
 
 /**
  * This listener can define what happens when the a tag is clicked
@@ -29,5 +29,5 @@ public interface OnClickATagListener {
      * @param href - the url for the anchor tag
      * @return indicates whether the click event has been handled
      */
-    boolean onClick(View widget, String spannedText, @Nullable String href);
+    boolean onClick(View widget, String spannedText, /*TODO fix AndroidX @Nullable*/ String href);
 }

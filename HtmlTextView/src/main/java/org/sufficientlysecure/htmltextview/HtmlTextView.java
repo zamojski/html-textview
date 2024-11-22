@@ -23,9 +23,9 @@ import android.text.Spanned;
 import android.text.style.QuoteSpan;
 import android.util.AttributeSet;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RawRes;
+//TODO fix AndroidX import androidx.annotation.NonNull;
+//TODO fix AndroidX import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.RawRes;
 
 import java.io.InputStream;
 import java.util.Scanner;
@@ -38,11 +38,11 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
     public int blockQuoteStripColor = getResources().getColor(R.color.black);
     public float blockQuoteStripWidth = 10F;
     public float blockQuoteGap = 20F;
-    @Nullable
+    /*TODO fix AndroidX @Nullable*/
     private ClickableTableSpan clickableTableSpan;
-    @Nullable
+    /*TODO fix AndroidX @Nullable*/
     private DrawTableLinkSpan drawTableLinkSpan;
-    @Nullable
+    /*TODO fix AndroidX @Nullable*/
     private OnClickATagListener onClickATagListener;
     private float indent = 24.0f; // Default to 24px.
 
@@ -63,14 +63,14 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
     /**
      * @see org.sufficientlysecure.htmltextview.HtmlTextView#setHtml(int)
      */
-    public void setHtml(@RawRes int resId) {
+    public void setHtml(/*TODO fix AndroidX @RawRes*/ int resId) {
         setHtml(resId, null);
     }
 
     /**
      * @see org.sufficientlysecure.htmltextview.HtmlTextView#setHtml(String)
      */
-    public void setHtml(@NonNull String html) {
+    public void setHtml(/*TODO fix AndroidX @NonNull*/ String html) {
         setHtml(html, null);
     }
 
@@ -83,7 +83,7 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
      * @param imageGetter for fetching images. Possible ImageGetter provided by this library:
      *                    HtmlLocalImageGetter and HtmlRemoteImageGetter
      */
-    public void setHtml(@RawRes int resId, @Nullable Html.ImageGetter imageGetter) {
+    public void setHtml(/*TODO fix AndroidX @RawRes*/ int resId, /*TODO fix AndroidX @Nullable*/ Html.ImageGetter imageGetter) {
         InputStream inputStreamText = getContext().getResources().openRawResource(resId);
 
         setHtml(convertStreamToString(inputStreamText), imageGetter);
@@ -97,7 +97,7 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
      * @param imageGetter for fetching images. Possible ImageGetter provided by this library:
      *                    HtmlLocalImageGetter and HtmlRemoteImageGetter
      */
-    public void setHtml(@NonNull String html, @Nullable Html.ImageGetter imageGetter) {
+    public void setHtml(/*TODO fix AndroidX @NonNull*/ String html, /*TODO fix AndroidX @Nullable*/ Html.ImageGetter imageGetter) {
         Spanned styledText = HtmlFormatter.formatHtml(
                 html, imageGetter, clickableTableSpan, drawTableLinkSpan,
                 new HtmlFormatter.TagClickListenerProvider() {
@@ -126,15 +126,15 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
         this.removeTrailingWhiteSpace = removeTrailingWhiteSpace;
     }
 
-    public void setClickableTableSpan(@Nullable ClickableTableSpan clickableTableSpan) {
+    public void setClickableTableSpan(/*TODO fix AndroidX @Nullable*/ ClickableTableSpan clickableTableSpan) {
         this.clickableTableSpan = clickableTableSpan;
     }
 
-    public void setDrawTableLinkSpan(@Nullable DrawTableLinkSpan drawTableLinkSpan) {
+    public void setDrawTableLinkSpan(/*TODO fix AndroidX @Nullable*/ DrawTableLinkSpan drawTableLinkSpan) {
         this.drawTableLinkSpan = drawTableLinkSpan;
     }
 
-    public void setOnClickATagListener(@Nullable OnClickATagListener onClickATagListener) {
+    public void setOnClickATagListener(/*TODO fix AndroidX @Nullable*/ OnClickATagListener onClickATagListener) {
         this.onClickATagListener = onClickATagListener;
     }
 
@@ -151,8 +151,8 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
     /**
      * http://stackoverflow.com/questions/309424/read-convert-an-inputstream-to-a-string
      */
-    @NonNull
-    private static String convertStreamToString(@NonNull InputStream is) {
+    /*TODO fix AndroidX @NonNull*/
+    private static String convertStreamToString(/*TODO fix AndroidX @NonNull*/ InputStream is) {
         Scanner s = new Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
     }

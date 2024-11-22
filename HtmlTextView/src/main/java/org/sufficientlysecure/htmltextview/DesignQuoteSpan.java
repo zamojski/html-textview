@@ -20,7 +20,7 @@ import android.text.Layout;
 import android.text.style.LeadingMarginSpan;
 import android.text.style.LineBackgroundSpan;
 
-import androidx.annotation.NonNull;
+//TODO fix AndroidX import androidx.annotation.NonNull;
 
 public class DesignQuoteSpan implements LeadingMarginSpan, LineBackgroundSpan {
 
@@ -53,9 +53,9 @@ public class DesignQuoteSpan implements LeadingMarginSpan, LineBackgroundSpan {
     }
 
     @Override
-    public void drawBackground(@NonNull Canvas canvas, @NonNull Paint paint,
+    public void drawBackground(/*TODO fix AndroidX @NonNull*/ Canvas canvas, /*TODO fix AndroidX @NonNull*/ Paint paint,
                                int left, int right, int top, int baseline, int bottom,
-                               @NonNull CharSequence text, int start, int end, int lineNumber) {
+                               /*TODO fix AndroidX @NonNull*/ CharSequence text, int start, int end, int lineNumber) {
         int paintColor = paint.getColor();
         paint.setColor(backgroundColor);
         canvas.drawRect((float) left, (float) top, (float) right, (float) bottom, paint);

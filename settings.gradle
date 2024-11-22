@@ -1,2 +1,2 @@
-include ':example'
+//TODO fix AndroidX include ':example'
 include ':HtmlTextView'

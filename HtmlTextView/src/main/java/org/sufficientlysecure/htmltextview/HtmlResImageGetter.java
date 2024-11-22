@@ -21,7 +21,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.util.Log;
-import androidx.annotation.NonNull;
+//TODO fix AndroidX import androidx.annotation.NonNull;
 
 /**
  * Copied from http://stackoverflow.com/a/22298833
@@ -29,7 +29,7 @@ import androidx.annotation.NonNull;
 public class HtmlResImageGetter implements Html.ImageGetter {
     private Context context;
 
-    public HtmlResImageGetter(@NonNull Context context) {
+    public HtmlResImageGetter(/*TODO fix AndroidX @NonNull*/ Context context) {
         this.context = context;
     }
 

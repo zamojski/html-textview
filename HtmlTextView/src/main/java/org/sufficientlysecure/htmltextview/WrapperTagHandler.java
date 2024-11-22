@@ -16,10 +16,10 @@ package org.sufficientlysecure.htmltextview;
 
 import android.text.Editable;
 
-import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.Nullable;
 
 import org.xml.sax.Attributes;
 
 public interface WrapperTagHandler {
-    boolean handleTag(boolean opening, String tag, Editable output, @Nullable Attributes attributes);
+    boolean handleTag(boolean opening, String tag, Editable output, /*TODO fix AndroidX @Nullable*/ Attributes attributes);
 }

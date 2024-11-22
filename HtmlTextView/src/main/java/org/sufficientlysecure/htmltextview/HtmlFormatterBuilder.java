@@ -15,7 +15,7 @@
 package org.sufficientlysecure.htmltextview;
 
 import android.text.Html.ImageGetter;
-import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.Nullable;
 
 public class HtmlFormatterBuilder {
 
@@ -55,22 +55,22 @@ public class HtmlFormatterBuilder {
         return removeTrailingWhiteSpace;
     }
 
-    public HtmlFormatterBuilder setHtml(@Nullable final String html) {
+    public HtmlFormatterBuilder setHtml(/*TODO fix AndroidX @Nullable*/ final String html) {
         this.html = html;
         return this;
     }
 
-    public HtmlFormatterBuilder setImageGetter(@Nullable final ImageGetter imageGetter) {
+    public HtmlFormatterBuilder setImageGetter(/*TODO fix AndroidX @Nullable*/ final ImageGetter imageGetter) {
         this.imageGetter = imageGetter;
         return this;
     }
 
-    public HtmlFormatterBuilder setClickableTableSpan(@Nullable final ClickableTableSpan clickableTableSpan) {
+    public HtmlFormatterBuilder setClickableTableSpan(/*TODO fix AndroidX @Nullable*/ final ClickableTableSpan clickableTableSpan) {
         this.clickableTableSpan = clickableTableSpan;
         return this;
     }
 
-    public HtmlFormatterBuilder setDrawTableLinkSpan(@Nullable final DrawTableLinkSpan drawTableLinkSpan) {
+    public HtmlFormatterBuilder setDrawTableLinkSpan(/*TODO fix AndroidX @Nullable*/ final DrawTableLinkSpan drawTableLinkSpan) {
         this.drawTableLinkSpan = drawTableLinkSpan;
         return this;
     }

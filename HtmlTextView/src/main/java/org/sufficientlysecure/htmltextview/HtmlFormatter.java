@@ -18,15 +18,15 @@ import android.text.Html;
 import android.text.Html.ImageGetter;
 import android.text.Spanned;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+//TODO fix AndroidX import androidx.annotation.NonNull;
+//TODO fix AndroidX import androidx.annotation.Nullable;
 
 public class HtmlFormatter {
 
     private HtmlFormatter() {
     }
 
-    public static Spanned formatHtml(@NonNull final HtmlFormatterBuilder builder) {
+    public static Spanned formatHtml(/*TODO fix AndroidX @NonNull*/ final HtmlFormatterBuilder builder) {
         return formatHtml(
             builder.getHtml(), builder.getImageGetter(), builder.getClickableTableSpan(),
             builder.getDrawTableLinkSpan(), new TagClickListenerProvider() {
@@ -42,7 +42,7 @@ public class HtmlFormatter {
         OnClickATagListener provideTagClickListener();
     }
 
-    public static Spanned formatHtml(@Nullable String html, ImageGetter imageGetter, ClickableTableSpan clickableTableSpan, DrawTableLinkSpan drawTableLinkSpan, TagClickListenerProvider tagClickListenerProvider, float indent, boolean removeTrailingWhiteSpace) {
+    public static Spanned formatHtml(/*TODO fix AndroidX @Nullable*/ String html, ImageGetter imageGetter, ClickableTableSpan clickableTableSpan, DrawTableLinkSpan drawTableLinkSpan, TagClickListenerProvider tagClickListenerProvider, float indent, boolean removeTrailingWhiteSpace) {
         final HtmlTagHandler htmlTagHandler = new HtmlTagHandler();
         htmlTagHandler.setClickableTableSpan(clickableTableSpan);
         htmlTagHandler.setDrawTableLinkSpan(drawTableLinkSpan);
@@ -66,8 +66,8 @@ public class HtmlFormatter {
      * This methods removes this space again.
      * See https://github.com/SufficientlySecure/html-textview/issues/19
      */
-    @Nullable
-    private static Spanned removeHtmlBottomPadding(@Nullable Spanned text) {
+    /*TODO fix AndroidX @Nullable*/
+    private static Spanned removeHtmlBottomPadding(/*TODO fix AndroidX @Nullable*/ Spanned text) {
         if (text == null) {
             return null;
         }
